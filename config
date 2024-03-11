@@ -253,8 +253,8 @@ bindsym $mod+r mode "resize"
 font FiraCode Nerd Font Med 10
 
 # Theming windows
-client.focused #8fbcbb #8fbcbb #2e3440
-client.focused_inactive #4c566a #4c566a #eceff4
+client.focused #8fbcbb #8fbcbb #2e3440 #8fbcbb
+client.focused_inactive #4c566a #4c566a #eceff4 #4c566a
 client.focused_tab_title #4c566a #4c566a #eceff4
 client.unfocused #3b4252 #3b4252 #eceff4
 default_border pixel 3
