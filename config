@@ -270,7 +270,6 @@ exec export qt_style_override=kvantum
 # assign workspaces
 assign [app_id="firefox"] workspace 1
 assign [class="Slack"] workspace 2
-assign [app_id="Alacritty"] workspace 3
 assign [app_id="org.strawberrymusicplayer.strawberry"] workspace 4
 assign [class="obsidian"] workspace 6
 
