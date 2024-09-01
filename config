@@ -44,8 +44,8 @@ output * bg ~/Pictures/Background/Backgrounds/0430.jpg fill
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-output HDMI-A-1 resolution 1920x1080 position 0,230
-output DP-1 resolution 2560x1440 position 1920,0
+# output HDMI-A-1 resolution 1920x1080 position 0,230
+output DP-1 mode 3840x2160@240Hz
 
 # Config for flameshot to work with multiple monitors
 for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
@@ -56,21 +56,27 @@ workspace 2 output DP-1
 workspace 3 output DP-1
 workspace 4 output DP-1
 workspace 5 output DP-1
+workspace 6 output DP-1
+workspace 7 output DP-1
+workspace 8 output DP-1
+workspace 9 output DP-1
 
-workspace 6 output HDMI-A-1
-workspace 7 output HDMI-A-1
-workspace 8 output HDMI-A-1
-workspace 9 output HDMI-A-1
-workspace 10 output HDMI-A-1
-
+# workspace 6 output HDMI-A-1
+# workspace 7 output HDMI-A-1
+# workspace 8 output HDMI-A-1
+# workspace 9 output HDMI-A-1
+# workspace 10 output HDMI-A-1
+#
 ### Idle configuration
 #
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 1800 'swaylock -f -c 000000' \
-         timeout 3600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         timeout 180000 'swaylock -f -c 000000' \
+         timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 000000'
+
+
 #
 # This will lock your screen after x seconds of inactivity, then turn off
 # your displays after y seconds, and turn your screens back on when
@@ -83,7 +89,7 @@ exec swayidle -w \
 #   input "2:14:SynPS/2_Synaptics_TouchPad" {
 #       dwt enabled
 #       tap enabled
-#       natural_scroll enabled
+#       natural_scroll0 enabled
 #       middle_emulation enabled
 #   }
 #
@@ -110,6 +116,7 @@ input type:keyboard {
 	# Set hotkeys for apps
 	bindsym $mod+t exec alacritty
 	bindsym $mod+b exec firefox
+	bindsym $mod+Shift+f exec files
 	bindsym $mod+p exec flameshot
 
     # Drag floating windows by holding down $mod and left mouse button.
@@ -121,6 +128,9 @@ input type:keyboard {
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
+	
+	# Lock the screen
+	bindsym $mod+Shift+Escape  exec loginctl lock-session
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -259,28 +269,26 @@ client.focused_tab_title #4c566a #4c566a #eceff4
 client.unfocused #3b4252 #3b4252 #eceff4
 default_border pixel 3
 
-exec export qt_logging_rules="qt5ct.debug=true"
-exec export xdg_current_desktop=sway
-exec export xdg_session_type=wayland
-exec export qt_qpa_platform=wayland
-exec export qt_qpa_platformtheme=qt5ct
-exec export qt_style_override=kvantum
+exec swaymsg "export QT_LOGGING_RULES='qt6ct.debug=true'"
+exec swaymsg "export XDG_CURRENT_DESKTOP=sway"
+exec swaymsg "export XDG_SESSION_TYPE=wayland"
+exec swaymsg "export QT_QPA_PLATFORM=wayland"
+exec swaymsg "export QT_QPA_PLATFORMTHEME=qt6ct"
+exec swaymsg "export QT_STYLE_OVERRIDE=kvantum"
 
 
 # assign workspaces
 assign [app_id="firefox"] workspace 1
-assign [class="Slack"] workspace 2
-assign [app_id="org.strawberrymusicplayer.strawberry"] workspace 4
-assign [class="obsidian"] workspace 6
+assign [class="Steam"] workspace 2
+assign [class="obsidian"] workspace 4
+assign [app_id="org.strawberrymusicplayer.strawberry"] workspace 5
 
 # autostart programs
-exec swaymsg "workspace 3; exec alacritty;"
-exec swaymsg "workspace 7; exec alacritty;"
-exec swaymsg "workspace 6; exec 'flatpak run md.obsidian.Obsidian';"
-exec swaymsg "workspace 2; exec 'flatpak run com.slack.Slack';"
 exec swaymsg "workspace 1; exec firefox;"
+exec swaymsg "workspace 2; exec 'flatpak run com.valvesoftware.Steam';"
+exec swaymsg "workspace 3; exec alacritty;"
+exec swaymsg "workspace 4; exec 'flatpak run md.obsidian.Obsidian';"
 
-exec swaymsg "workspace 6"
 exec swaymsg "workspace 1"
 
 # Include configs from 3 locations:
