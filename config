@@ -119,6 +119,8 @@ input type:keyboard {
 	bindsym $mod+b exec firefox
 	bindsym $mod+Shift+f exec files
 	bindsym $mod+p exec flameshot
+	bindsym $mod+bracketleft exec '/home/jared/.jaredbs/brightlight -d'
+	bindsym $mod+bracketright exec '/home/jared/.jaredbs/brightlight -u'
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
