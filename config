@@ -31,7 +31,8 @@ set $rofi_cmd rofi \
 # Shows a combined list of the applications with desktop files and
 # executables from PATH.
 # TODO: add window with the next release of rofi-wayland
-set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
+# set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
+set $menu $rofi_cmd -show combi -combi-modes drun -modes combi
 
 ### Output configuration
 #
@@ -205,7 +206,9 @@ input type:keyboard {
     # $mod+h or $mod+v, for horizontal and vertical splits
     # respectively.
     bindsym $mod+Shift+B splith
+    bindsym $mod+c splith
     bindsym $mod+v splitv
+
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
@@ -278,18 +281,18 @@ exec swaymsg "export QT_STYLE_OVERRIDE=kvantum"
 
 
 # assign workspaces
-assign [app_id="firefox"] workspace 1
-assign [class="Steam"] workspace 2
-assign [class="obsidian"] workspace 4
-assign [app_id="org.strawberrymusicplayer.strawberry"] workspace 5
+# assign [app_id="firefox"] workspace 1
+# assign [class="Steam"] workspace 2
+# assign [class="obsidian"] workspace 4
+# assign [app_id="org.strawberrymusicplayer.strawberry"] workspace 5
 
 # autostart programs
-exec swaymsg "workspace 1; exec firefox;"
-exec swaymsg "workspace 2; exec 'flatpak run com.valvesoftware.Steam';"
-exec swaymsg "workspace 3; exec alacritty;"
-exec swaymsg "workspace 4; exec 'flatpak run md.obsidian.Obsidian';"
+# exec swaymsg "workspace 1; exec firefox;"
+# exec swaymsg "workspace 2; exec 'flatpak run com.valvesoftware.Steam';"
+# exec swaymsg "workspace 3; exec alacritty;"
+# exec swaymsg "workspace 4; exec 'flatpak run md.obsidian.Obsidian';"
 
-exec swaymsg "workspace 1"
+# exec swaymsg "workspace 1"
 
 # Include configs from 3 locations:
 #  - /usr/share/sway/config.d
