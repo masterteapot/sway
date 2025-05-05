@@ -52,6 +52,9 @@ output eDP-1 mode 1920x1200@240Hz scale 1.0
 for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
 
 
+bindgesture swipe:4:right workspace prev
+bindgesture swipe:4:left workspace next
+
 workspace 1 output DP-1
 workspace 2 output DP-1
 workspace 3 output DP-1
@@ -119,6 +122,8 @@ input type:keyboard {
 	bindsym $mod+b exec firefox
 	bindsym $mod+Shift+f exec files
 	bindsym $mod+p exec flameshot
+	bindsym $mod+n exec nautilus
+	bindsym $mod+z exec flatpak run dev.zed.Zed
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
