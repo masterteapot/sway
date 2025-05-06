@@ -51,9 +51,25 @@ output eDP-1 mode 1920x1200@240Hz scale 1.0
 # Config for flameshot to work with multiple monitors
 for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
 
-
+# mousepad bindings for swiping
 bindgesture swipe:4:right workspace prev
 bindgesture swipe:4:left workspace next
+
+# Rebinding the touchpad 
+# check: man 5 sway-input
+# check: swaymsg -t get_inputs --raw | jq '.[] | select (.type=="touchpad")'
+input "type:touchpad" {
+    tap disabled
+    tap_button_map lrm
+    accel_profile adaptive
+    natural_scroll disabled
+    left_handed disabled
+    click_method clickfinger
+    middle_emulation disabled
+    scroll_method two_finger
+    dwt enabled
+    dwtp enabled
+}
 
 workspace 1 output DP-1
 workspace 2 output DP-1
