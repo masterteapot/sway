@@ -120,7 +120,8 @@ input type:keyboard {
 	bindsym $mod+t exec alacritty
 	bindsym $mod+b exec firefox
 	bindsym $mod+Shift+f exec files
-	bindsym $mod+p exec flameshot
+	bindsym $mod+n exec files
+	bindsym $mod+p exec flameshot gui
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
