@@ -118,7 +118,7 @@ input type:keyboard {
 
 	# Set hotkeys for apps
 	bindsym $mod+t exec alacritty
-	bindsym $mod+b exec firefox
+	bindsym $mod+b exec flatpak run org.mozilla.firefox
 	bindsym $mod+Shift+f exec files
 	bindsym $mod+n exec files
 	bindsym $mod+p exec flameshot gui
