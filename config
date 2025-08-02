@@ -14,14 +14,13 @@ set $down j
 set $up k
 set $right l
 
-
 gaps inner 4
 gaps outer 4
 smart_gaps on
 
 # Your preferred terminal emulator
 # Recommends: foot
-set $term alacritty
+set $term "~/.local/bin/ghostty"
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -125,6 +124,8 @@ input type:keyboard {
 #
     # Start a terminal
     bindsym $mod+Return exec $term
+	bindsym $mod+t exec $term
+	bindsym $mod+a exec alacritty
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -132,9 +133,9 @@ input type:keyboard {
 
     # Start your launcher
 	bindsym $mod+d exec $menu
+	bindsym $mod+Space exec $menu
 
 	# Set hotkeys for apps
-	bindsym $mod+t exec alacritty
 	bindsym $mod+b exec firefox
 	bindsym $mod+Shift+f exec files
 	bindsym $mod+p exec flameshot
@@ -243,10 +244,10 @@ input type:keyboard {
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    # bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
+    # bindsym $mod+a focus parent
 #
 # Scratchpad:
 #
