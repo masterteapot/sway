@@ -222,6 +222,7 @@ input type:keyboard {
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
+    bindsym Control+Return fullscreen
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+u floating toggle
