@@ -41,7 +41,7 @@ input "type:touchpad" {
     tap disabled
     tap_button_map lrm
     accel_profile adaptive
-    natural_scroll disabled
+    natural_scroll enable
     left_handed disabled
     click_method clickfinger
     middle_emulation disabled
