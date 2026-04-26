@@ -19,6 +19,11 @@ gaps inner 4
 gaps outer 4
 smart_gaps on
 
+for_window [app_id="."] inhibit_idle fullscreen
+for_window [shell="xwayland"] inhibit_idle fullscreen
+for_window [shell="xdg-shell"] inhibit_idle fullscreen
+for_window [shell="wayland"] inhibit_idle fullscreen
+
 # Your preferred terminal emulator
 # Recommends: foot
 set $term "~/.local/bin/ghostty"
