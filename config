@@ -55,6 +55,7 @@ output HDMI-A-1 mode 3840x2160@120Hz
 for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
 
 
+workspace 1 output HDMI-A-1
 workspace 2 output HDMI-A-1
 workspace 3 output HDMI-A-1
 workspace 4 output HDMI-A-1
@@ -63,7 +64,6 @@ workspace 6 output HDMI-A-1
 workspace 7 output HDMI-A-1
 workspace 8 output HDMI-A-1
 workspace 9 output HDMI-A-1
-workspace 1 output HDMI-A-1
 
 # workspace 6 output HDMI-A-1
 # workspace 7 output HDMI-A-1
@@ -103,6 +103,11 @@ input type:keyboard {
     repeat_delay 220
     repeat_rate 50
 }
+
+input * {
+    xkb_options caps:escape
+}
+
 ### Key bindings
 #
 # Basics:
