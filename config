@@ -132,8 +132,8 @@ bindsym $mod+Space exec $menu
 
 # Set hotkeys for apps
 bindsym $mod+b exec flatpak run org.mozilla.firefox
-bindsym $mod+Shift+f exec files
-bindsym $mod+n exec files
+bindsym $mod+Shift+f exec nautilus
+bindsym $mod+n exec nautilus
 bindsym $mod+p exec flameshot gui
 
 # Drag floating windows by holding down $mod and left mouse button.
