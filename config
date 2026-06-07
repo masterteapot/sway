@@ -72,10 +72,9 @@ workspace 10 output HDMI-A-1
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 180000 'swaylock -f -c 000000' \
-         timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         timeout 300 'swaylock -f -c 000000' \
+         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 000000'
-
 
 #
 # This will lock your screen after x seconds of inactivity, then turn off
@@ -118,10 +117,13 @@ bindsym $mod+Space exec $menu
 
 # Set hotkeys for apps
 bindsym $mod+b exec firefox
-bindsym $mod+Shift+f exec files
 bindsym $mod+p exec flameshot
 bindsym $mod+n exec nautilus
-bindsym $mod+z exec flatpak run dev.zed.Zed
+bindsym $mod+shift+f exec nautilus
+
+# Brightness control
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
